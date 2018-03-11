@@ -108,6 +108,16 @@ class Vocabulary(Base):
     weight = Column(Integer)
 
 
+class User(Base):
+    """
+    Table containing the User information.
+    """
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(Text, nullable=False, unique=True, index=True)
+    password_hash = Column(Text)
+
+
 class DirectConn:
     """
     This class will set up a direct connection to the database. It allows to reset the database,
