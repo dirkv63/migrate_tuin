@@ -34,6 +34,26 @@ class Flickr(Base):
     photo_id = Column(Integer)
 
 
+class FlickrDetails(Base):
+    """
+    Table with the whereabouts of the Flickr pictures.
+    """
+    __tablename__ = "flickrdetails"
+    photo_id = Column(Integer, primary_key=True)
+    datetaken = Column(Integer, nullable=False)
+    title = Column(Text, nullable=False)
+    url_c = Column(Text, nullable=False)
+    url_l = Column(Text, nullable=False)
+    url_m = Column(Text, nullable=False)
+    url_n = Column(Text, nullable=False)
+    url_o = Column(Text, nullable=False)
+    url_q = Column(Text, nullable=False)
+    url_s = Column(Text, nullable=False)
+    url_sq = Column(Text, nullable=False)
+    url_t = Column(Text, nullable=False)
+    url_z = Column(Text, nullable=False)
+
+
 class History(Base):
     """
     Table remembering which node is selected when.
