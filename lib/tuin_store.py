@@ -52,6 +52,7 @@ class FlickrDetails(Base):
     url_sq = Column(Text, nullable=False)
     url_t = Column(Text, nullable=False)
     url_z = Column(Text, nullable=False)
+    flickr_url = Column(Text, nullable=False)
 
 
 class History(Base):

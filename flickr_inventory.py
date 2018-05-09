@@ -39,6 +39,8 @@ def search_photos(tuindb, flickr_obj, flickr_user, curr_page):
         params["datetaken"] = timegm(utc_time)
         for k in attribs:
             params[k] = photo[k]
+        params["flickr_url"] = "https://www.flickr.com/photos/{uid}/{pid}".format(uid=cfg["flickr"]["user_id"],
+                                                                                  pid=photo["id"])
         flickrdetail = FlickrDetails(**params)
         tuindb.add(flickrdetail)
     my_loop.end_loop()
