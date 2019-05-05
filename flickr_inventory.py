@@ -16,13 +16,9 @@ def search_photos(tuindb, flickr_obj, flickr_user, curr_page):
     Search for all photos on this page. Handle all photos. Remember number of pages.
 
     :param tuindb: sqlalchemy connection to tuin DB.
-
     :param flickr_obj:
-
     :param flickr_user:
-
     :param curr_page:
-
     :return: pages
     """
     attribs = ["title", "url_sq", "url_t", "url_s", "url_q", "url_m", "url_n", "url_z", "url_c", "url_l", "url_o"]

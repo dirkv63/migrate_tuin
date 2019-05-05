@@ -51,7 +51,7 @@ terms = ds.get_terms()
 for rec in terms:
     term = Term(
         id=rec["tid"],
-        vocabulary_id = rec["vid"],
+        vocabulary_id=rec["vid"],
         name=rec["name"],
         description=rec["description"]
     )

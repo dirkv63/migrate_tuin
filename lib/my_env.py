@@ -10,7 +10,6 @@ import logging.handlers
 import os
 import platform
 import sys
-import subprocess
 from datetime import datetime
 
 
@@ -19,9 +18,7 @@ def init_env(projectname, filename):
     This function will initialize the environment: Find and return handle to config file and set-up logging.
 
     :param projectname: Name that will be used to find ini file in properties subdirectory.
-
     :param filename: Filename (__file__) of the calling script (for logfile).
-
     :return: config handle
     """
     projectname = projectname
@@ -37,7 +34,6 @@ def get_modulename(scriptname):
     Modulename is required for logfile and for properties file.
 
     :param scriptname: Name of the script for which modulename is required. Use __file__.
-
     :return: Module Filename from the calling script.
     """
     # Extract calling application name
@@ -55,9 +51,7 @@ def init_loghandler(config, modulename):
 
     :param config: Reference to the configuration ini file. Directory for logfile should be
     in section Main entry logdir.
-
     :param modulename: The name of the module. Each module will create it's own logfile.
-
     :return: Log Handler
     """
     logdir = config['Main']['logdir']
@@ -104,16 +98,8 @@ def get_inifile(projectname):
         # configfile = filepath + "/properties/" + projectname + ".ini"
         configfile = os.path.join(filepath, 'properties', "{p}.ini".format(p=projectname))
     ini_config = configparser.ConfigParser()
-    try:
-        f = open(configfile)
-        ini_config.read_file(f)
-        f.close()
-    except:
-        e = sys.exc_info()[1]
-        ec = sys.exc_info()[0]
-        log_msg = "Read Inifile not successful: %s (%s)"
-        print(log_msg % (e, ec))
-        sys.exit(1)
+    f = open(configfile)
+    ini_config.read_file(f)
     return ini_config
 
 

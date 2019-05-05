@@ -184,9 +184,7 @@ def init_session(db, echo=False):
     This function configures the connection to the database and returns the session object.
 
     :param db: Name of the sqlite3 database.
-
     :param echo: True / False, depending if echo is required. Default: False
-
     :return: session object.
     """
     conn_string = "sqlite:///{db}".format(db=db)
