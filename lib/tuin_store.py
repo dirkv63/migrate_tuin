@@ -145,11 +145,13 @@ class DirectConn:
     in which case the database will be dropped and recreated, including all tables.
     """
 
-    def __init__(self, config):
+    def __init__(self, db):
         """
         To drop a database in sqlite3, you need to delete the file.
+
+        :param db: Name of the Database to connect.
         """
-        self.db = config['Main']['db']
+        self.db = db
         self.dbConn = ""
         self.cur = ""
 
