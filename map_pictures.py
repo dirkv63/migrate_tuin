@@ -30,7 +30,7 @@ cnt = my_env.LoopInfo("Titles", 50)
 for title in titles:
     cnt.info_loop()
     query = """
-    SELECT name, contenttype, path, size 
+    SELECT name, contenttype, path, size, pcloud_id
     FROM files 
     WHERE name like '{}.%'
       AND (path like '%tuin%' OR path like '%Motorola%')
